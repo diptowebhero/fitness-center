@@ -34,5 +34,47 @@
         "desc": "Karate is easily the best martial arts for you if you are aiming for a full body workout but don't want to spend hours in a gym. From kicks, strikes, punches to throwing over the opponent, it works up your core muscles like nothing else",
         "img": "https://i.ibb.co/X38wc6D/service7.jpg",
         "name": "Karate"
+    },
+    {
+        "id": 7,
+        "desc": "Running Yoga Strength training is an essential supplement to a runner's roadwork because it strengthens muscles and joints, which can improve race times and decrease injury risk.is up:exercise routine has been proven to increase your speed and VO2 max",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/trainers/1.jpg",
+        "name": "Mike Hussy",
+        "job":"Body Bulder"
+    },
+    {
+        "id": 8,
+        "desc": "Running Yoga Strength training is an essential supplement to a runner's roadwork because it strengthens muscles and joints, which can improve race times and decrease injury risk.is up:exercise routine has been proven to increase your speed and VO2 max",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/trainers/4.jpg",
+        "job":"Fitness",
+        "name":"Susana Deo"
+    },
+    {
+        "id": 9,
+        "desc": "Running Yoga Strength training is an essential supplement to a runner's roadwork because it strengthens muscles and joints, which can improve race times and decrease injury risk.is up:exercise routine has been proven to increase your speed and VO2 max",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/trainers/5.jpg",
+        "name": "Michel Jhon",
+        "job":"Yoga"
+    },
+    {
+        "id": 10,
+        "desc": "Running Yoga Strength training is an essential supplement to a runner's roadwork because it strengthens muscles and joints, which can improve race times and decrease injury risk.is up:exercise routine has been proven to increase your speed and VO2 max",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/trainers/3.jpg",
+        "name": "David Smith",
+        "job":"Running"
+    },
+    {
+        "id": 11,
+        "desc": "Karate is easily the best martial arts for you if you are aiming for a full body workout but don't want to spend hours in a gym. From kicks, strikes, punches to throwing over the opponent, it works up your core muscles like nothing else",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/trainers/2.jpg",
+        "name": "Running Yoga",
+        "job":"Body Building Specialist"
+    },
+    {
+        "id": 12,
+        "desc": "Karate is easily the best martial arts for you if you are aiming for a full body workout but don't want to spend hours in a gym. From kicks, strikes, punches to throwing over the opponent, it works up your core muscles like nothing else",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/trainers/trainer1.png",
+        "name": "Jack Roni",
+        "job":"Running Specialist"
     }
 ]
