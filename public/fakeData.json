@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "desc": "Strength training is an essential supplement to a runner's roadwork because it strengthens muscles and joints, which can improve race times and decrease injury risk. ... And scientific research backs this up: Incorporating weights into your regular exercise routine has been proven to increase your speed and VO2 max",
+        "img": "https://i.ibb.co/92BvgPW/service1.jpg",
+        "name": "Running"
+    },
+    {
+        "id": 2,
+        "desc": "Bodybuilders train with heavy weights to create a large, balanced physique. If you're after a beach body, you're looking for a leaner look, so you need to eat and lift a little less. But there's more to it than that.",
+        "img": "https://cdn.shopify.com/s/files/1/0327/8461/3514/articles/bodybuilding-equiupments-you-must-have_1024x.jpg?v=1593538908",
+        "name": "Body Building"
+    },
+    {
+        "id": 3,
+        "desc": "meditation reminds us that the pain and discomfort you feel during a workout is temporary. And because your mind and body are deeply connected while overcoming the mental and physical obstacles during a workout, you're also training how your body reacts to other life stressors",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/classes/meditation.jpg",
+        "name": "Meditation"
+    },
+    {
+        "id": 4,
+        "desc": "Frequent yoga training may increase flexibility and range of motion whilst relieving muscle tension which can help improve performance.",
+        "img": "https://radiustheme.com/demo/html/gymedge/multi-page/img/classes/yoga.jpg",
+        "name": "Classic Yoga"
+    },
+    {
+        "id": 5,
+        "desc": "Running Yoga Strength training is an essential supplement to a runner's roadwork because it strengthens muscles and joints, which can improve race times and decrease injury risk.is up:exercise routine has been proven to increase your speed and VO2 max",
+        "img": "https://www.mensjournal.com/wp-content/uploads/mf/main-the-beginners-guide-to-yoga.jpg?w=900&h=506&crop=1&quality=86&strip=all",
+        "name": "Running Yoga"
+    },
+    {
+        "id": 6,
+        "desc": "Karate is easily the best martial arts for you if you are aiming for a full body workout but don't want to spend hours in a gym. From kicks, strikes, punches to throwing over the opponent, it works up your core muscles like nothing else",
+        "img": "https://i.ibb.co/X38wc6D/service7.jpg",
+        "name": "Karate"
+    }
+]

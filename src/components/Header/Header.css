@@ -1,0 +1,24 @@
+.logo{
+    color: #d25223 !important;
+}
+.header a{
+    color: #000 !important;
+    font-size: 17px;
+    font-weight: 500;
+}
+.header a:hover{
+    color: #d25223 !important;
+    transition: .5s;
+}
+.btn-regulars{
+    background: #d25223;
+    color: white !important;
+    padding: 8px 25px !important;
+    border-radius: 5px;
+    font-weight: 400;
+}
+.drop{
+    font-size: 18px;
+    color: #000 !important;
+    font-weight: 500;
+}

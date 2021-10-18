@@ -1,0 +1,41 @@
+
+input{
+    border: none;
+    background-color: #CCCCCC;
+    padding: 9px 25px;
+    border-radius: 10px;
+}
+.btns {
+    background: #FE3C5E;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+}
+.email{
+    color:#FE3C5E;
+}
+.fab{
+    color: #FE3C5E;
+    border-radius: 100%;
+    margin-right: 20px;
+    font-size: 23px;
+}
+.titles{
+    font-size: 13px;
+    font-weight: bold;
+    color:gray;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+.information{
+    font-weight: bold;
+    color:gray;
+    letter-spacing: 2.5px;
+}
+.contact{
+    width: 100%;
+    background: rgba(32, 44, 69, 0.9);
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
