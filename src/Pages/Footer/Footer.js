@@ -66,7 +66,7 @@ const Footer = () => {
                             </div>
                             <div className="mt-5">
                                 <div className="input-group mb-3 w-75 shadow-lg">
-                                    <input type="text" className="form-control rounded-3 border-0 footer-input" placeholder="Leave Your Messege"
+                                    <input type="text" className="form-control rounded-3 border-0" placeholder="Leave Your Messege"
                                         aria-label="Recipient's username" />
                                     <button className="btns" type="button" id="button-addon2">Search</button>
                                 </div>

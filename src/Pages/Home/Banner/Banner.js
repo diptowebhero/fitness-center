@@ -1,16 +1,11 @@
 
-import React, { useEffect, useState } from 'react';
+
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 import Services from '../../Services/Services';
 import './Banner.css'
 const Banner = () => {
-    const[services,setService] = useState([]);
-
-    useEffect(()=>{
-        fetch('./fakeData.json')
-        .then(response => response.json())
-        .then(data => setService(data))
-    },[])
+    const{services} = useAuth()
     return (
         <div>
             <Row xs={12} className="banner mx-auto">

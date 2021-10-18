@@ -1,9 +1,58 @@
 import React from 'react';
+import { Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import login from '../../assets/images/Mobile-login-removebg-preview.png'
+import useAuth from '../../hooks/useAuth';
 import './SignUp.css'
 const SignUp = () => {
+    const { allContext } = useAuth()
+    const { signInWithGoogle,
+        signIn,
+        getEmail,
+        error,
+        getPassword,
+        getName
+    } = allContext
+
     return (
-        <div>
-            <h1>this sign up</h1>
+        <div className="login py-5  mt-5">
+            <Container>
+                <Row className="main g-0 shadow">
+                    <div className="col-lg-5">
+                        <img style={{ width: "500px" }} src={login} alt="" />
+                    </div>
+                    <div className="col-lg-7 py-5 text-center">
+                        <h2>Create Account</h2>
+                        <Form onSubmit={signIn}>
+                            <p className="text-danger">{error}</p>
+                            <div className="form-row py-2 pt-5">
+                                <div className="offset-1 col-lg-10">
+                                    <input onBlur={getName} className="inp px-3 shadow" type="name" placeholder="Enter Name" required />
+                                </div>
+                            </div>
+                            <div className="form-row py-2">
+                                <div className="offset-1 col-lg-10">
+                                    <input onBlur={getEmail} className="inp px-3 shadow" type="email" placeholder="Enter email" required />
+                                </div>
+                            </div>
+                            <div className="form-row py-2">
+                                <div className="offset-1 col-lg-10">
+                                    <input onSubmit={getPassword} className="inp px-3 shadow" type="password" placeholder="Enter Password" required />
+                                </div>
+                            </div>
+                            <div className="form-row py-3">
+                                <div className="offset-1 col-lg-10">
+                                    <button type="submit" className="btn-1">Login</button>
+                                </div>
+                            </div>
+                            <p>Already Sign up? <Link to="/login">Login</Link></p>
+                        </Form>
+                        <p>Or Login With</p>
+                        <span><i onClick={signInWithGoogle} class="fab fa-google"></i></span>
+                        <span><i class="fab fa-github"></i></span>
+                    </div>
+                </Row>
+            </Container>
         </div>
     );
 };

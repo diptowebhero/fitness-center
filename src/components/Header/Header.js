@@ -3,9 +3,10 @@ import './Header.css'
 import logo from '../../assets/images/logo.png'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 const Header = () => {
-    const { user,logOut } = useFirebase()
+    const { allContext } = useAuth()
+    const { user, logOut } = allContext
     return (
         <div>
             <Navbar style={{ background: "#e9e9e9" }} expand="lg">
@@ -23,8 +24,8 @@ const Header = () => {
                                 !user.email ? <><Nav.Link as={Link} to="/login" className="btn-regulars mx-2">Login</Nav.Link>
                                     <Nav.Link as={Link} to="/signUp" className="btn-regulars">Sign Up</Nav.Link></>
                                     :
-                                    <NavDropdown className="drop" title={user.email} id="basic-nav-dropdown">
-                                        <button onClick={logOut}>Log out</button>
+                                    <NavDropdown className="drop" title={user.displayName} id="basic-nav-dropdown">
+                                        <button className="btn-regulars mx-4 border-0" onClick={logOut}>Log out</button>
                                     </NavDropdown>
                             }
                         </Nav>
