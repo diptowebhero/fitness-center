@@ -63,6 +63,7 @@ const Login = () => {
                                             timer: 2000
                                         })
                                         history.push(redirect)
+                                        window.location.reload()
                                     })
                                     .catch(error => {
                                         setError(error.message)

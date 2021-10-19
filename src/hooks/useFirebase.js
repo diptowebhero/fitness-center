@@ -12,7 +12,6 @@ import {
 import { useState, useEffect } from "react"
 import Swal from "sweetalert2";
 import firebaseInitialization from "../Firebase/Firebase.init";
-
 firebaseInitialization()
 const useFirebase = () => {
     const [loding, setLoding] = useState(true)
@@ -21,7 +20,12 @@ const useFirebase = () => {
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
-
+    // clear error
+    useEffect(() => {
+        setTimeout(() => {
+            setError("");
+        }, 5000);
+    }, [error]);
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider()
     const gitHubProvider = new GithubAuthProvider()
@@ -45,8 +49,9 @@ const useFirebase = () => {
                     title: 'Login Successful',
                     showConfirmButton: false,
                     timer: 2000
-                  })
+                })
                 setError('')
+                window.location.reload()
             })
             .catch(error => {
                 setError(error.message)
@@ -77,21 +82,22 @@ const useFirebase = () => {
     const handleRegister = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user)
-            setUserInfo()
-            setError('')
-            Swal.fire({
-                position: 'top-center',
-                icon: 'success',
-                title: 'Sign Up Successful',
-                showConfirmButton: false,
-                timer: 2000
-              })
-        })
-        .catch(error => {
-            setError(error.message)
-        })
+            .then(result => {
+                setUser(result.user)
+                setUserInfo()
+                setError('')
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Sign Up Successful',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+                window.location.reload()
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
     //sign out
     const logOut = () => {
