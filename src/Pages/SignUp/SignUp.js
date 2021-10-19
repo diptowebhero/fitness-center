@@ -19,7 +19,6 @@ const SignUp = () => {
         getName,
         setUser,
         setError,
-        signInWithGithub,
     } = allContext;
 
     return (
@@ -76,16 +75,6 @@ const SignUp = () => {
                                         setError(error.message)
                                     })
                             }} class="fab fa-google"></i></span>
-                            <span><i onClick={() => {
-                                signInWithGithub()
-                                    .then(result => {
-                                        setUser(result.user)
-                                        history.push(redirect)
-                                    })
-                                    .catch(error => {
-                                        setError(error.message)
-                                    })
-                            }} class="fab fa-github"></i></span>
                         </div>
                     </Slide>
                 </Row>

@@ -17,7 +17,7 @@ const Login = () => {
         getPassword,
         error,
         setError,
-        setUser
+        setUser,
     } = allContext
     return (
         <div className="login py-5  mt-5">
@@ -69,7 +69,6 @@ const Login = () => {
                                         setError(error.message)
                                     })
                             }} class="fab fa-google"></i></span>
-                            <span><i class="fab fa-github"></i></span>
                         </div>
                     </Slide>
                 </Row>

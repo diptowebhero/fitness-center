@@ -7,7 +7,6 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     updateProfile,
-    GithubAuthProvider
 } from "firebase/auth";
 import { useState, useEffect } from "react"
 import Swal from "sweetalert2";
@@ -28,14 +27,9 @@ const useFirebase = () => {
     }, [error]);
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider()
-    const gitHubProvider = new GithubAuthProvider()
     //sign in with google
     const signInWithGoogle = () => {
         return signInWithPopup(auth, googleProvider)
-    }
-    //sign in with github
-    const signInWithGithub = () => {
-        return signInWithPopup(auth, gitHubProvider)
     }
     //signIn with Email Password
     const signInWithEmailPassword = e => {
@@ -135,7 +129,6 @@ const useFirebase = () => {
         setUserInfo,
         setUser,
         setError,
-        signInWithGithub
 
     }
 }
