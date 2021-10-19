@@ -1,9 +1,10 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-
+import Zoom from 'react-reveal/Zoom';
 const ClassSchedule = () => {
     return (
-        <Container className="mt-5">
+        <Zoom>
+            <Container className="mt-5">
             <div>
                 <h1 className="text-center text-bold">OUR <span>SCHEDULE</span></h1>
             </div>
@@ -49,6 +50,7 @@ const ClassSchedule = () => {
                 </Row>
             </div>
         </Container>
+        </Zoom>
     );
 };
 

@@ -10,12 +10,13 @@ import {
     GithubAuthProvider
 } from "firebase/auth";
 import { useState, useEffect } from "react"
+import Swal from "sweetalert2";
 import firebaseInitialization from "../Firebase/Firebase.init";
 
 firebaseInitialization()
 const useFirebase = () => {
     const [loding, setLoding] = useState(true)
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState({});
     const [error, setError] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
@@ -28,7 +29,7 @@ const useFirebase = () => {
     const signInWithGoogle = () => {
         return signInWithPopup(auth, googleProvider)
     }
-    //sign in with google
+    //sign in with github
     const signInWithGithub = () => {
         return signInWithPopup(auth, gitHubProvider)
     }
@@ -38,7 +39,13 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result)
-                alert('login successful')
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Login Successful',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
                 setError('')
             })
             .catch(error => {
@@ -67,18 +74,24 @@ const useFirebase = () => {
         setPassword(e?.target?.value)
     }
     //signup
-    const signIn = e => {
+    const handleRegister = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUserInfo()
-                setUser(result.user)
-                setError('')
-                console.log(result.user);
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+        .then(result => {
+            setUser(result.user)
+            setUserInfo()
+            setError('')
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Sign Up Successful',
+                showConfirmButton: false,
+                timer: 2000
+              })
+        })
+        .catch(error => {
+            setError(error.message)
+        })
     }
     //sign out
     const logOut = () => {
@@ -112,7 +125,7 @@ const useFirebase = () => {
         getPassword,
         getName,
         loding,
-        signIn,
+        handleRegister,
         setUserInfo,
         setUser,
         setError,
