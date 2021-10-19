@@ -7,7 +7,7 @@ import './SignUp.css'
 const SignUp = () => {
     const history = useHistory()
     const location = useLocation()
-    const redirect = location?.state?.from ||  '/home'
+    const redirect = location?.state?.from || '/home'
     const { allContext } = useAuth()
     const { signInWithGoogle,
         signIn,
@@ -17,7 +17,7 @@ const SignUp = () => {
         getName,
         setUser,
         setError,
-        setUserInfo
+        signInWithGithub
     } = allContext
 
     return (
@@ -28,18 +28,8 @@ const SignUp = () => {
                         <img className="img fluid w-100" src={login} alt="" />
                     </div>
                     <div className="col-lg-7 py-5 text-center">
-                        <h2 style={{fontWeight:"bold"}}>Create Account</h2>
-                        <Form onSubmit={()=>{
-                            signIn()
-                            .then(result => {
-                                setUserInfo()
-                                setUser(result.user)
-                                history.push(redirect)
-                            })
-                            .catch(error => {
-                                setError(error.message)
-                            })
-                        }}>
+                        <h2 style={{ fontWeight: "bold" }}>Create Account</h2>
+                        <Form onSubmit={signIn}>
                             <p className="text-danger">{error}</p>
                             <div className="form-row py-2 pt-3">
                                 <div className="offset-1 col-lg-10">
@@ -74,7 +64,16 @@ const SignUp = () => {
                                     setError(error.message)
                                 })
                         }} class="fab fa-google"></i></span>
-                        <span><i class="fab fa-github"></i></span>
+                        <span><i onClick={() => {
+                            signInWithGithub()
+                                .then(result => {
+                                    setUser(result.user)
+                                    history.push(redirect)
+                                })
+                                .catch(error => {
+                                    setError(error.message)
+                                })
+                        }} class="fab fa-github"></i></span>
                     </div>
                 </Row>
             </Container>

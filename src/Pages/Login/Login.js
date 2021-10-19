@@ -26,17 +26,7 @@ const Login = () => {
                     </div>
                     <div className="col-lg-7 py-5 text-center">
                         <h2 style={{fontWeight:"bold"}}>Please Login</h2>
-                        <Form onSubmit={()=>{
-                            signInWithEmailPassword()
-                            .then(result => {
-                                setUser(result)
-                                alert('login successful')
-                                history.push(redirect)
-                            })
-                            .catch(error => {
-                                setError(error.message)
-                            })
-                        }}>
+                        <Form onSubmit={signInWithEmailPassword}>
                             <div className="form-row py-2 pt-3">
                                 <p className="text-danger">{error}</p>
                                 <div className="offset-1 col-lg-10">

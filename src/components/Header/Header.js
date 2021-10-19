@@ -11,7 +11,7 @@ const Header = () => {
         <div>
             <Navbar style={{ background: "#e9e9e9" }} expand="lg">
                 <Container>
-                    <Navbar.Brand className="logo" href="#home"><img src={logo} alt="" />FITNESS CENTER </Navbar.Brand>
+                    <Navbar.Brand className="logo" href="#home"><img src={logo} alt="" /><span style={{fontWeight:"500"}}>FITNESS CENTER</span> </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto header">

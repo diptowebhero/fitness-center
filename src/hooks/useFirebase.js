@@ -6,7 +6,8 @@ import {
     signOut,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    updateProfile
+    updateProfile,
+    GithubAuthProvider
 } from "firebase/auth";
 import { useState, useEffect } from "react"
 import firebaseInitialization from "../Firebase/Firebase.init";
@@ -22,13 +23,27 @@ const useFirebase = () => {
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider()
+    const gitHubProvider = new GithubAuthProvider()
+    //sign in with google
     const signInWithGoogle = () => {
         return signInWithPopup(auth, googleProvider)
     }
+    //sign in with google
+    const signInWithGithub = () => {
+        return signInWithPopup(auth, gitHubProvider)
+    }
     //signIn with Email Password
-    const signInWithEmailPassword = (e) => {
-        e.preventDefault();
-      return signInWithEmailAndPassword(auth, email, password)
+    const signInWithEmailPassword = e => {
+        e.preventDefault()
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                setUser(result)
+                alert('login successful')
+                setError('')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
     //update user profile
     const setUserInfo = () => {
@@ -40,21 +55,30 @@ const useFirebase = () => {
             });
     }
     //getName
-    const getName = (e) => {
+    const getName = e => {
         setName(e?.target?.value)
     }
     //getEmail
-    const getEmail = (e) => {
+    const getEmail = e => {
         setEmail(e?.target?.value)
     }
     //getPassword
-    const getPassword = (e) => {
+    const getPassword = e => {
         setPassword(e?.target?.value)
     }
     //signup
-    const signIn = (e) => {
-        e.preventDefault();
-     return  createUserWithEmailAndPassword(auth, email, password)
+    const signIn = e => {
+        e.preventDefault()
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                setUserInfo()
+                setUser(result.user)
+                setError('')
+                console.log(result.user);
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
     //sign out
     const logOut = () => {
@@ -72,7 +96,7 @@ const useFirebase = () => {
             if (user) {
                 setUser(user)
             }
-            else{
+            else {
                 setUser({})
             }
             setLoding(false)
@@ -91,7 +115,8 @@ const useFirebase = () => {
         signIn,
         setUserInfo,
         setUser,
-        setError
+        setError,
+        signInWithGithub
 
     }
 }

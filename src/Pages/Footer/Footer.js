@@ -74,7 +74,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <hr />
-                    <p style={{ fontWeight: "500" }} className="text-center">Copyright © All Reserved by Educafe, 2021</p>
+                    <p style={{ fontWeight: "500" }} className="text-center">Copyright © All Reserved by Fitness Center, 2021</p>
                 </div>
             </Container>
             <div>
