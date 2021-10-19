@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthProvider from './AuthProvider/AuthProvider';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 import Header from './components/Header/Header';
 import Details from './Pages/Details/Details';
 import Footer from './Pages/Footer/Footer';
@@ -28,6 +30,12 @@ function App() {
             </Route>
             <Route path="/signUp">
               <SignUp></SignUp>
+            </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <PrivateRoute path="/details/:serviceId">
               <Details></Details>

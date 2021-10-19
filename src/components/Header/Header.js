@@ -15,14 +15,14 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto header">
-                            <Nav.Link as={Link} to="/home" href="#home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/about" href="#link">About</Nav.Link>
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/about">About</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                         </Nav>
                         <Nav>
                             {
-                                !user.email ? <><Nav.Link as={Link} to="/login" className="btn-regulars mx-2">Login</Nav.Link>
-                                    <Nav.Link as={Link} to="/signUp" className="btn-regulars">Sign Up</Nav.Link></>
+                                !user.email ? <><Nav.Link as={Link} to="/login" className="btn-regulars text-center">Login</Nav.Link>
+                                    <Nav.Link as={Link} to="/signUp" className="btn-regulars text-center">Sign Up</Nav.Link></>
                                     :
                                     <NavDropdown className="drop" title={user.displayName} id="basic-nav-dropdown">
                                         <button className="btn-regulars mx-4 border-0" onClick={logOut}>Log out</button>

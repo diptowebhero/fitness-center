@@ -13,6 +13,7 @@ import firebaseInitialization from "../Firebase/Firebase.init";
 
 firebaseInitialization()
 const useFirebase = () => {
+    const [loding, setLoding] = useState(true)
     const [user, setUser] = useState([]);
     const [error, setError] = useState("")
     const [password, setPassword] = useState("")
@@ -22,27 +23,12 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider()
     const signInWithGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user)
-                window.location.reload()
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+        return signInWithPopup(auth, googleProvider)
     }
     //signIn with Email Password
     const signInWithEmailPassword = (e) => {
-        e.preventDefault()
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUser(result)
-                alert('login successful')
-                window.location.reload()
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+        e.preventDefault();
+      return signInWithEmailAndPassword(auth, email, password)
     }
     //update user profile
     const setUserInfo = () => {
@@ -67,16 +53,8 @@ const useFirebase = () => {
     }
     //signup
     const signIn = (e) => {
-        e.preventDefault()
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUserInfo()
-                setUser(result.user)
-                window.location.reload()
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+        e.preventDefault();
+     return  createUserWithEmailAndPassword(auth, email, password)
     }
     //sign out
     const logOut = () => {
@@ -94,6 +72,10 @@ const useFirebase = () => {
             if (user) {
                 setUser(user)
             }
+            else{
+                setUser({})
+            }
+            setLoding(false)
         })
     }, [])
     return {
@@ -105,8 +87,11 @@ const useFirebase = () => {
         getEmail,
         getPassword,
         getName,
+        loding,
         signIn,
-        setUserInfo
+        setUserInfo,
+        setUser,
+        setError
 
     }
 }

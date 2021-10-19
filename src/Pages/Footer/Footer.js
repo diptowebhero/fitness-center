@@ -61,7 +61,7 @@ const Footer = () => {
                                 <p className="titles">Keep in Touch</p>
                                 <div>
                                     <input className="footer-input" placeholder="name" type="text" />
-                                    <input className='mx-2 footer-input' placeholder="email" type="text" />
+                                    <input className='footer-input' placeholder="email" type="text" />
                                 </div>
                             </div>
                             <div className="mt-5">
