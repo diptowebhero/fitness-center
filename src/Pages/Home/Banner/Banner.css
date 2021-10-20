@@ -44,3 +44,16 @@ span{
     padding: 10px 25px;
     border-radius: 50px;
 }
+.day-btn:hover{
+    background: #fff;
+    color: #000;
+    transition: .3s;
+}
+.btn-active{
+    background: #fff;
+    border: none;
+    color: #000;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 50px;
+}

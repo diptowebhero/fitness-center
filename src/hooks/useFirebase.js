@@ -32,24 +32,8 @@ const useFirebase = () => {
         return signInWithPopup(auth, googleProvider)
     }
     //signIn with Email Password
-    const signInWithEmailPassword = e => {
-        e.preventDefault()
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUser(result)
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Login Successful',
-                    showConfirmButton: false,
-                    timer: 2000
-                })
-                setError('')
-                window.location.reload()
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+    const signInWithEmailPassword = () => {
+     return  signInWithEmailAndPassword(auth, email, password)
     }
     //update user profile
     const setUserInfo = () => {
@@ -73,25 +57,8 @@ const useFirebase = () => {
         setPassword(e?.target?.value)
     }
     //signup
-    const handleRegister = e => {
-        e.preventDefault()
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUser(result.user)
-                setUserInfo()
-                setError('')
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Sign Up Successful',
-                    showConfirmButton: false,
-                    timer: 2000
-                })
-                window.location.reload()
-            })
-            .catch(error => {
-                setError(error.message)
-            })
+    const handleRegister = () => {
+     return  createUserWithEmailAndPassword(auth, email, password)
     }
     //sign out
     const logOut = () => {

@@ -19,6 +19,7 @@ const SignUp = () => {
         getName,
         setUser,
         setError,
+        setUserInfo
     } = allContext;
 
     return (
@@ -33,7 +34,27 @@ const SignUp = () => {
                     <Slide right cascade>
                         <div className="col-lg-7 py-5 text-center">
                             <h2 style={{ fontWeight: "bold" }}>Create Account</h2>
-                            <Form onSubmit={handleRegister}>
+                            <Form onSubmit={(e)=>{
+                                e.preventDefault()
+                                handleRegister()
+                                .then(result => {
+                                    setUser(result.user)
+                                    setUserInfo()
+                                    setError('')
+                                    Swal.fire({
+                                        position: 'top-center',
+                                        icon: 'success',
+                                        title: 'Sign Up Successful',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                    history.push("/login")
+                                    window.history.go(0)
+                                })
+                                .catch(error => {
+                                    setError(error.message)
+                                })
+                            }}>
                                 <p className="text-danger">{error}</p>
                                 <div className="form-row py-2 pt-3">
                                     <div className="offset-1 col-lg-10">
@@ -55,7 +76,7 @@ const SignUp = () => {
                                         <button type="submit" className="btn-1">Sign Up</button>
                                     </div>
                                 </div>
-                                <p>Already Sign up? <Link to="/login">login</Link></p>
+                                <p>Already Sign up? <Link to="/login">Please login</Link></p>
                             </Form>
                             <p>Or Login With</p>
                             <span><i onClick={() => {

@@ -7,7 +7,7 @@ const Services = ({ service }) => {
     return (
         <Col>
             <Zoom>
-                <Card className="p-2 border-0 shadow">
+                <Card style={{height:"460px"}} className="p-2 border-0 shadow">
                     <Card.Img style={{ height: "250px", borderRadius: "5px" }} variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>

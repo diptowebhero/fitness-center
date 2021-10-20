@@ -31,7 +31,26 @@ const Login = () => {
                     <Slide right cascade>
                         <div className="col-lg-7 py-5 text-center">
                             <h2 style={{ fontWeight: "bold" }}>Please Login</h2>
-                            <Form onSubmit={signInWithEmailPassword}>
+                            <Form onSubmit={(e)=>{
+                                e.preventDefault()
+                                signInWithEmailPassword()
+                                .then(result => {
+                                    setUser(result.user)
+                                    Swal.fire({
+                                        position: 'top-center',
+                                        icon: 'success',
+                                        title: 'Login Successful',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                    history.push(redirect)
+                                    window.history.go()
+                                    setError('')
+                                })
+                                .catch(error => {
+                                    setError(error.message)
+                                })
+                            }}>
                                 <div className="form-row py-2 pt-3">
                                     <p className="text-danger">{error}</p>
                                     <div className="offset-1 col-lg-10">
@@ -63,7 +82,6 @@ const Login = () => {
                                             timer: 2000
                                         })
                                         history.push(redirect)
-                                        window.location.reload()
                                     })
                                     .catch(error => {
                                         setError(error.message)
