@@ -13,6 +13,7 @@ const SignUp = () => {
     const { allContext } = useAuth()
     const { signInWithGoogle,
         handleRegister,
+        logOut,
         getEmail,
         error,
         getPassword,
@@ -48,8 +49,8 @@ const SignUp = () => {
                                         showConfirmButton: false,
                                         timer: 2000
                                     })
+                                    logOut()
                                     history.push("/login")
-                                    window.history.go(0)
                                 })
                                 .catch(error => {
                                     setError(error.message)
@@ -76,9 +77,9 @@ const SignUp = () => {
                                         <button type="submit" className="btn-1">Sign Up</button>
                                     </div>
                                 </div>
-                                <p>Already Sign up? <Link to="/login">Please login</Link></p>
+                                <p style={{fontWeight:"500",fontSize:"15px"}}>Already Sign up? <Link to="/login">Please login</Link></p>
                             </Form>
-                            <p>Or Login With</p>
+                            <p style={{fontWeight:"500",fontSize:"15px"}}>Or Login With</p>
                             <span><i onClick={() => {
                                 signInWithGoogle()
                                     .then(result => {

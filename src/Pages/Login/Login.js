@@ -44,7 +44,7 @@ const Login = () => {
                                         timer: 2000
                                     })
                                     history.push(redirect)
-                                    window.history.go()
+                                    window.location.reload()
                                     setError('')
                                 })
                                 .catch(error => {
@@ -67,9 +67,9 @@ const Login = () => {
                                         <button type="submit" className="btn-1">Login</button>
                                     </div>
                                 </div>
-                                <p>New User? <Link to="/signUp">Sign Up</Link></p>
+                                <p style={{fontWeight:"500",fontSize:"15px"}}>New User? <Link to="/signUp">Sign Up</Link></p>
                             </Form>
-                            <p>Or Login With</p>
+                            <p style={{fontWeight:"500",fontSize:"15px"}}>Or Login With</p>
                             <span><i onClick={() => {
                                 signInWithGoogle()
                                     .then(result => {
